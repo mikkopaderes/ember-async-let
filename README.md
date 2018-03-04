@@ -1,7 +1,7 @@
 ember-async-let
 ==============================================================================
 
-[Short description of the addon.]
+ Alias the result of an async call to a new name
 
 Installation
 ------------------------------------------------------------------------------
@@ -10,11 +10,46 @@ Installation
 ember install ember-async-let
 ```
 
-
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+### `{{async-let}}`
+
+A tagless component that prevents a block from rendering until the passed-in promise resolves
+
+#### Async property
+
+```hbs
+{{#async-let on=(async-property property) as |resolvedData|}}
+  <div>{{resolvedData}}</div>
+{{/async-let}}
+```
+
+#### Async function
+
+```javascript
+const context = {
+  methodName(param1, param2) {
+    return Promise.resolve('foobar');
+  }
+};
+```
+
+```hbs
+{{#async-let on=(async-function context 'methodName' param1AsVariable 'param2-as-string') as |resolvedData|}}
+  <div>{{resolvedData}}</div>
+{{/async-let}}
+```
+
+#### Placeholder
+
+This will show the value of the placeholder while the async call is still running
+
+```hbs
+{{#async-let on=(async-property property) placeholder=(component 'my-spinner') as |resolvedData|}}
+  <div>{{resolvedData}}</div>
+{{/async-let}}
+```
 
 
 Contributing

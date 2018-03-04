@@ -1,0 +1,9 @@
+{{#with on as |result|}}
+  {{#if result.isFulfilled}}
+    {{yield result.content}}
+  {{else}}
+    {{#if placeholder}}
+      {{placeholder}}
+    {{/if}}
+  {{/if}}
+{{/with}}
