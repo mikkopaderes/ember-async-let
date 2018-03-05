@@ -58,7 +58,7 @@ module('Integration | Component | async-let', function(hooks) {
 
     // Act
     await render(hbs`
-      {{#async-let on=(async-function context 'method') placeholder="Foo" as |data|}}
+      {{#async-let on=(async-function context 'method') placeholder=(component 'test-spinner') as |data|}}
         <div data-test="yield">{{data}}</div>
       {{/async-let}}
     `);

@@ -41,9 +41,9 @@ const context = {
 {{/async-let}}
 ```
 
-#### Placeholder
+#### Component placeholder
 
-This will show the value of the placeholder while the async call is still running
+This will show a specified component as a placeholder until the async call resolves
 
 ```hbs
 {{#async-let on=(async-property property) placeholder=(component 'my-spinner') as |resolvedData|}}
