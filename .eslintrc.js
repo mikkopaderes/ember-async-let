@@ -9,12 +9,15 @@ module.exports = {
   ],
   extends: [
     'eslint:recommended',
-    'plugin:ember/recommended'
+    'plugin:ember/recommended',
+    'rmmmp/base',
+    'rmmmp/ember'
   ],
   env: {
     browser: true
   },
   rules: {
+    'ember/avoid-leaking-state-in-ember-objects': 'off'
   },
   overrides: [
     // node files

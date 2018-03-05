@@ -1,0 +1,11 @@
+# ember generated test files
+index.js
+testem.js
+config/*
+tests/dummy/app/*.js
+tests/dummy/config/*
+tests/helpers/destroy-app.js
+tests/helpers/module-for-acceptance.js
+tests/helpers/resolver.js
+tests/helpers/start-app.js
+tests/test-helper.js
